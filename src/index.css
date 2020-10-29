@@ -1,13 +1,203 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "Trebuchet MS";
+  font-style: normal;
+  font-weight: normal;
+  src: local("./fonts/Trebuchet MS"), url("./fonts/trebuc.woff") format("woff");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 200;
+  src: local(""),
+    url("./fonts/exo-2-v9-cyrillic-ext_cyrillic-200.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/exo-2-v9-cyrillic-ext_cyrillic-200.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""),
+    url("./fonts/exo-2-v9-cyrillic-ext_cyrillic-300.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/exo-2-v9-cyrillic-ext_cyrillic-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+  font-family: "Trebuchet MS";
+  background: url("./img/pattern.png");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper__food {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Exo 2";
+  font-size: 36px;
+  font-weight: 200;
+  text-align: center;
+  color: white;
+}
+/* .card-border {
+  margin: 20px;
+  position: relative;
+  width: 328px;
+  height: 488px;
+  background-color: #2ea8e6;
+  border-radius: 14px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+}
+.card {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 320px;
+  height: 480px;
+  background-color: #f2f2f2;
+  border-radius: 11px;
+  clip-path: polygon(14.7% 0, 100% 0, 100% 100%, 0 100%, 0 9.7%);
+
+} */
+.card {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  margin: 20px 40px;
+}
+.card_blue {
+  background-image: url("./img/photo3.png");
+}
+.card_pink {
+  background-image: url("./img/photo2.png");
+}
+.card_gray {
+  background-image: url("./img/photo1.png");
+}
+/* .card__box {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  overflow: hidden;
+  width: 312px;
+  height: 472px;
+  border-radius: 11px;
+ } */
+.card__text {
+  padding-left: 46px;
+}
+.card__top {
+  font-size: 16px;
+  color: #666666;
+  padding: 18px 0 5px;
+}
+.disapprove {
+  color: #e62e7a;
+  display: none;
+  padding: 18px 0 5px;
+}
+.card__name {
+  font-size: 48px;
+  font-weight: bold;
+}
+.card__type {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+.card__qty,
+.card__num {
+  font-size: 14px;
+  color: #666666;
+}
+.photo {
+  position: absolute;
+  left: -30px;
+  top: 205px;
+  width: 380px;
+}
+.card__weight {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+}
+.card__weight_blue {
+  background-color: #2ea8e6;
+}
+.card__weight_pink {
+  background-color: #e62e7a;
+}
+.card__weight_gray {
+  background-color: rgb(179, 179, 179);
+}
+.weight-num {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 8px;
+}
+.weight-kg {
+  text-align: center;
+  font-size: 22px;
+  line-height: 0.6em;
+}
+.desc,
+.buy {
+  text-align: center;
+  font-size: 13px;
+  color: white;
+}
+.buy span {
+  position: relative;
+  color: #2ea8e6;
+  cursor: pointer;
+}
+.buy span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 85%;
+  border-bottom: 1px dashed #2ea8e6;
+}
+.nonavailable {
+  text-align: center;
+  font-size: 13px;
+  color: #ffff66;
+}
+.count {
+  color: white;
+  padding-left: 60px;
+}
+
+@media only screen and (max-width: 1210px) {
+  .wrapper {
+    display: block;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .card {
+    margin: 20px auto;
+  }
 }
