@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import classnames from "classnames";
 
 function FoodBlock({
   type,
@@ -33,44 +32,77 @@ function FoodBlock({
   const cardRef = useRef();
   const disapproveRef = useRef();
   const card__topRef = useRef();
+  const card__qtyRef = useRef();
+  const card__numRef = useRef();
+  const card__weightRef = useRef();
 
-  const onClickHandlerBuy = () => {
-    plusCount()
-  }
+const clickHandle = () => {
+  if(count < totalCount) {clickHandler ? plusCount() : minusCount()
+  }else{disable()}
+}
 
-  const onClickHandler = () => {
-    clickHandler ? plusCount() : minusCount();
+const mouseHandle = () => {
+  if(count < totalCount) {cardRef.current.onmouseleave = function () {
+    mouseLeave();
+  };
+  cardRef.current.onmouseenter = function () {
+    mouseEnter();
+  }} else {
     cardRef.current.onmouseleave = function () {
-      mouseLeave();
+      disable();
     };
     cardRef.current.onmouseenter = function () {
-      mouseEnter();
+      disable();
+    }
     };
+}
+
+  const onClickHandler = () => {
+    clickHandle()
+    mouseHandle()
   };
 
   function mouseLeave() {
     toggleClickHandler();
-    card__topRef.current.style.display = "block"
-    disapproveRef.current.style.display = "none";
+    mouseLeaveOn()
   }
   function mouseEnter() {
-    if(clickHandler) {
-      disapproveRef.current.style.display = "block"
-      card__topRef.current.style.display = "none"
-    } else {
-      disapproveRef.current.style.display = "none"
-      card__topRef.current.style.display = "block"
-  }}
+    clickHandler ? mouseEnterOn() : mouseEnterOnTo()
+  }
+
+  function mouseLeaveOn() {
+    cardRef.current.setAttribute('class', 'card card_pink')
+    disapproveRef.current.style.display = "none"
+    card__topRef.current.style.display = "block"
+    card__weightRef.current.style.backgroundColor = "#e62e7a"
+  }
+  function mouseEnterOn() {
+    cardRef.current.setAttribute('class', 'card card_blue')
+    disapproveRef.current.style.display = "block"
+    card__topRef.current.style.display = "none"
+    card__weightRef.current.style.backgroundColor = "#2ea8e6"
+  }
+  function mouseEnterOnTo() {
+    cardRef.current.setAttribute('class', 'card card_blue')
+    disapproveRef.current.style.display = "none"
+    card__topRef.current.style.display = "block"
+    card__weightRef.current.style.backgroundColor = "#2ea8e6"
+  }
+  function disable() {
+    cardRef.current.setAttribute('class', 'card card_gray')
+    disapproveRef.current.style.display = "none"
+    card__topRef.current.style.display = "block"
+    card__topRef.current.style.color = "rgba(179, 179, 179, 0.502)"
+    card__qtyRef.current.style.color = "rgba(179, 179, 179, 0.502)"
+    card__numRef.current.style.color = "rgba(179, 179, 179, 0.502)"
+    card__weightRef.current.style.backgroundColor = "rgba(179, 179, 179, 0.502)"
+  }
 
   return (
     <div>
       <div
         ref={cardRef}
-        className={classnames("card", {
-          card_blue: count === 0,
-          card_pink: count > 0 && count < totalCount,
-          card_gray: count === totalCount,
-        })}
+        className="card card_blue"
         onClick={onClickHandler}
       >
         <div className="card__text">
@@ -78,20 +110,16 @@ function FoodBlock({
           <div ref={disapproveRef} className="disapprove">Котэ не одобряет?</div>
           <div className="card__name">Нямушка</div>
           <div className="card__type">{type}</div>
-          <div className="card__qty">
+          <div ref={card__qtyRef} className="card__qty">
             <b>{qty}</b> порций
           </div>
-          <div className="card__num">
+          <div ref={card__numRef} className="card__num">
             <b>{number}</b> {mouse} в подарок
             <div>{end}</div>
           </div>
         </div>
-        <div
-          className={classnames("card__weight", {
-            card__weight_blue: count === 0,
-            card__weight_pink: count > 0 && count < totalCount,
-            card__weight_gray: count === totalCount,
-          })}
+        <div ref={card__weightRef}
+          className="card__weight"
         >
           <div className="weight-num">{weight}</div>
           <div className="weight-kg">кг</div>
@@ -101,7 +129,7 @@ function FoodBlock({
         <div className="desc">{desc}</div>
       ) : count === 0 ? (
         <div className="buy">
-          Чего сидишь? Порадуй котэ, <span onClick={onClickHandlerBuy}>купи.</span>
+          Чего сидишь? Порадуй котэ, <span onClick={plusCount}>купи.</span>
         </div>
       ) : (
         <div className="nonavailable">{nonavailable}</div>

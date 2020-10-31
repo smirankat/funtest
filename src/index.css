@@ -90,6 +90,7 @@ h1 {
 }
 .card_gray {
   background-image: url("./img/photo1.png");
+  color:rgba(179, 179, 179, 0.502)!important;
 }
 /* .card__box {
   position: absolute;
@@ -141,9 +142,8 @@ h1 {
   height: 80px;
   border-radius: 50%;
   color: white;
-}
-.card__weight_blue {
   background-color: #2ea8e6;
+
 }
 .card__weight_pink {
   background-color: #e62e7a;
