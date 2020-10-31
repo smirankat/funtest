@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/funtest/static/css/main.662f46fd.chunk.css",
-    "main.js": "/funtest/static/js/main.ddef2ab0.chunk.js",
-    "main.js.map": "/funtest/static/js/main.ddef2ab0.chunk.js.map",
+    "main.css": "/funtest/static/css/main.67aaa0b0.chunk.css",
+    "main.js": "/funtest/static/js/main.9f5d5c51.chunk.js",
+    "main.js.map": "/funtest/static/js/main.9f5d5c51.chunk.js.map",
     "runtime-main.js": "/funtest/static/js/runtime-main.83a8f9ec.js",
     "runtime-main.js.map": "/funtest/static/js/runtime-main.83a8f9ec.js.map",
-    "static/js/2.35a13d49.chunk.js": "/funtest/static/js/2.35a13d49.chunk.js",
-    "static/js/2.35a13d49.chunk.js.map": "/funtest/static/js/2.35a13d49.chunk.js.map",
+    "static/js/2.e6b001a6.chunk.js": "/funtest/static/js/2.e6b001a6.chunk.js",
+    "static/js/2.e6b001a6.chunk.js.map": "/funtest/static/js/2.e6b001a6.chunk.js.map",
     "index.html": "/funtest/index.html",
-    "static/css/main.662f46fd.chunk.css.map": "/funtest/static/css/main.662f46fd.chunk.css.map",
-    "static/js/2.35a13d49.chunk.js.LICENSE.txt": "/funtest/static/js/2.35a13d49.chunk.js.LICENSE.txt",
+    "static/css/main.67aaa0b0.chunk.css.map": "/funtest/static/css/main.67aaa0b0.chunk.css.map",
+    "static/js/2.e6b001a6.chunk.js.LICENSE.txt": "/funtest/static/js/2.e6b001a6.chunk.js.LICENSE.txt",
     "static/media/index.css": "/funtest/static/media/trebuc.aff341ba.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.83a8f9ec.js",
-    "static/js/2.35a13d49.chunk.js",
-    "static/css/main.662f46fd.chunk.css",
-    "static/js/main.ddef2ab0.chunk.js"
+    "static/js/2.e6b001a6.chunk.js",
+    "static/css/main.67aaa0b0.chunk.css",
+    "static/js/main.9f5d5c51.chunk.js"
   ]
 }
